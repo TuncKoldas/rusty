@@ -4,3 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+crossbeam = "0.8.4"
+opencv = "0.93.4"
+mpi = "0.6"
+clang-sys = "1.8"
