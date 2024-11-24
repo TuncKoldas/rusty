@@ -1,2 +1,2 @@
 # rusty
-Rust + Bend 
+Rust + Live Video Pattern Recognition
