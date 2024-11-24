@@ -1,0 +1,51 @@
+@down = (?(((* (a a)) @down__C0) b) b)
+
+@down__C0 = ({a e} ({b f} ((c g) (d h))))
+  &!@rots ~ (a (b (c d)))
+  &!@rots ~ (e (f (g h)))
+
+@gen = (?(((a a) @gen__C0) b) b)
+
+@gen__C0 = ({a d} ({$([*0x0000002] $([+0x0000001] b)) $([*0x0000002] e)} (c f)))
+  &!@gen ~ (a (b c))
+  &!@gen ~ (d (e f))
+
+@main = c
+  & @sum ~ (20 (b c))
+  & @sort ~ (20 (0 (a b)))
+  & @gen ~ (20 (0 a))
+
+@rots = (?(((* (a a)) @rots__C0) b) b)
+
+@rots__C0 = ({$([+0x0000001] a) c} ({b d} ((e f) h)))
+  & @down ~ (a (b (g h)))
+  & @warp ~ (c (d (e (f g))))
+
+@sort = (?(((* (a a)) @sort__C0) b) b)
+
+@sort__C0 = ({$([+0x0000001] a) {f c}} (b ((d g) i)))
+  & @rots ~ (a (b ((e h) i)))
+  &!@sort ~ (c (0 (d e)))
+  &!@sort ~ (f (1 (g h)))
+
+@sum = (?(((a a) @sum__C0) b) b)
+
+@sum__C0 = ({a c} ((b d) f))
+  &!@sum ~ (a (b $([+] $(e f))))
+  &!@sum ~ (c (d e))
+
+@swap = (?((@swap__C0 @swap__C1) a) a)
+
+@swap__C0 = (a (b (a b)))
+
+@swap__C1 = (* (b (a (a b))))
+
+@warp = (?((@warp__C0 @warp__C1) a) a)
+
+@warp__C0 = ($([^] $(b c)) ({$([>] $(a b)) d} ({a e} f)))
+  & @swap ~ (c (d (e f)))
+
+@warp__C1 = ({a f} ({b g} ((c h) ((d i) ((e j) (k l))))))
+  &!@warp ~ (f (g (h (i (j l)))))
+  &!@warp ~ (a (b (c (d (e k)))))
+
