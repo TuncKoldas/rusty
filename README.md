@@ -1,2 +1,2 @@
 # rusty
-Rust + Live Video Pattern Recognition
+Rust + Live Video Pattern Recognition through DroidCam
